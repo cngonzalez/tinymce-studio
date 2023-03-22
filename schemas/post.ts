@@ -10,45 +10,21 @@ export default defineType({
       title: 'Title',
       type: 'string',
     }),
-    defineField({
-      name: 'slug',
-      title: 'Slug',
-      type: 'slug',
-      options: {
-        source: 'title',
-        maxLength: 96,
-      },
-    }),
-    defineField({
-      name: 'author',
-      title: 'Author',
-      type: 'reference',
-      to: {type: 'author'},
-    }),
-    defineField({
-      name: 'mainImage',
-      title: 'Main image',
-      type: 'image',
-      options: {
-        hotspot: true,
-      },
-    }),
-    defineField({
-      name: 'categories',
-      title: 'Categories',
-      type: 'array',
-      of: [{type: 'reference', to: {type: 'category'}}],
-    }),
-    defineField({
-      name: 'publishedAt',
-      title: 'Published at',
-      type: 'datetime',
-    }),
+    // defineField({
+    //   name: 'body',
+    //   title: 'Body',
+    //   type: 'blockContent',
+    // }),
     defineField({
       name: 'body',
       title: 'Body',
-      type: 'blockContent',
+      type: 'tinyMCE',
     }),
+    defineField({
+      name: 'bodyPortableText',
+      title: 'Body (Portable Text)',
+      type: 'blockContent',
+    })
   ],
 
   preview: {
